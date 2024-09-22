@@ -4,22 +4,23 @@ int endX = 0;
 int endY = 150;
 int timeDelay = 0;
 int fadedStroke = 20;
+int fadedAlpha = 200;
 
 void setup()
 {
   size(500,500);
   strokeWeight(fadedStroke);
-  background(255, 255, 255);
+  background(0, 0, 0);
 }
 void draw()
 {
-  int randomR = (int)(Math.random()*255)+5;
-  int randomG = (int)(Math.random()*255)+5;
-  int randomB = (int)(Math.random()*255)+5;
-  background(0, 0, 0);
-  
+
+  fill(0, 0, 0, 50);
+  noStroke();
+  rect(0, 0, width, height);
+  noFill();
   strokeWeight(fadedStroke);
-  stroke(randomR, randomB, randomG);
+  stroke(0, 255, 255);
   endY = startY + (int)(Math.random()*30);
   endX = startX + (int)(Math.random()*40)-20;
   line(startX, startY, endX, endY);
@@ -29,6 +30,7 @@ void draw()
   if(fadedStroke > 0){
     fadedStroke--;
   }
+  
 
  
 }
